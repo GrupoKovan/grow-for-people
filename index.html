@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inteligência Comportamental · Black Friday</title>
+<meta name="description" content="Mapeamento comportamental para empresas: DISC e avaliações complementares, cruzando cada perfil com a função. Condição especial de Black Friday. Patrícia Abrão · Grow For People.">
+<meta property="og:title" content="Sua equipe tem mais potencial do que você imagina | Grow For People">
+<meta property="og:description" content="Mapeamento comportamental para empresas, com condição especial de Black Friday. Patrícia Abrão · Gestão Estratégica de Pessoas.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/*
+VOICE: consultiva, segura e acolhedora; fala de empresário para empresário.
+IDEA: um mapa de equipe, pessoas ligadas às funções que ocupam.
+PICTURE: pessoas de quatro tons ligadas por linhas a cartões de função.
+COLOUR and TYPE: verde profundo (crescimento de pessoas), papel claro, coral da Black Friday; Sora + Nunito Sans.
+LAYOUT: faixa preta da Black Friday, hero verde, seções claras em coluna, chamada final verde.
+*/
+:root{color-scheme:light dark;
+ --bg:light-dark(#F7F5F0,#0E1814);--surface:light-dark(#FFFFFF,#15231D);--ink:light-dark(#14241D,#ECF2EE);
+ --muted:light-dark(#5A6A62,#A7B8AF);--line:light-dark(#E2E0D8,#24372E);
+ --green:#0E4A36;--green-2:#0A3527;--soft:light-dark(#E5EFE9,#183026);--coral:#F06C1C;--on:#F4F8F5;
+ --t1:#F06C1C;--t2:#F2C14E;--t3:#5FB58A;--t4:#7AA7D9;
+ --display:"Sora","Segoe UI",system-ui,sans-serif;--body:"Nunito Sans","Segoe UI",system-ui,sans-serif}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--body);overflow-x:clip}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+p{margin:0}
+.band{padding:clamp(40px,6vw,88px) max(5vw,16px)}
+.in{max-width:1140px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+
+.bf{background:#0B0B0B;color:#fff;text-align:center;padding:10px 16px;font-size:15px;font-weight:700}
+.bf b{color:var(--coral)}
+
+.hero{background:var(--green);color:var(--on)}
+.hero .in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
+.tag{display:inline-block;background:var(--coral);color:#1A0D07;font-weight:800;font-family:var(--display);font-size:14px;padding:6px 12px;border-radius:99px;margin-bottom:18px}
+.hero h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.02em}
+.hero .lead{margin-top:18px;font-size:19px;color:#D6E6DD;max-width:56ch}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:var(--coral);color:#1A0D07;text-decoration:none;font-family:var(--display);font-weight:700;font-size:17px;padding:14px 22px;border-radius:12px;min-height:48px;transition:transform .15s}
+.cta:hover{transform:translateY(-2px)}
+.cta svg{width:22px;height:22px;flex:none}
+.fone{margin-top:12px;font-size:14px;color:#BFD5C9}
+.fig{position:relative;aspect-ratio:13/11;width:100%}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+
+.q{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,4vw,64px);align-items:start}
+.q h2,.sec h2{font-size:clamp(28px,3.6vw,40px);font-weight:700;letter-spacing:-.01em}
+.q .txt{display:grid;gap:16px;color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.two div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.two h3{font-size:17px;margin-bottom:6px}
+.two p{font-size:16px;color:var(--muted)}
+.destaque{font-weight:700;font-size:19px;font-family:var(--display);line-height:1.35}
+
+.sec .sub{margin-top:12px;color:var(--muted);max-width:62ch}
+.formatos{list-style:none;padding:0;margin:32px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.formatos li{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 20px;display:grid;gap:14px;align-content:start}
+.formatos svg{width:44px;height:44px}
+.formatos h3{font-size:18px;line-height:1.25}
+.formatos p{font-size:15px;color:var(--muted)}
+
+.alt{background:var(--soft)}
+.passos{list-style:none;padding:0;margin:36px 0 0;display:grid;gap:0;counter-reset:p}
+.passos li{counter-increment:p;display:grid;grid-template-columns:64px minmax(0,1fr);gap:20px;padding:20px 0;border-top:1px solid color-mix(in srgb,var(--green) 22%,transparent)}
+.passos li:last-child{border-bottom:1px solid color-mix(in srgb,var(--green) 22%,transparent)}
+.passos li::before{content:counter(p);width:52px;height:52px;border-radius:50%;background:var(--green);color:var(--on);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:20px}
+.passos h3{font-size:19px;margin-top:4px}
+.passos p{margin-top:4px;color:var(--muted);font-size:16px;max-width:70ch}
+
+.aviso{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3vw,36px)}
+.aviso svg{width:56px;height:56px}
+.aviso h2{font-size:clamp(24px,3vw,32px)}
+.aviso p{margin-top:12px;color:var(--muted);max-width:68ch}
+.aviso p strong{color:var(--ink)}
+
+.final{background:var(--green);color:var(--on);text-align:center}
+.final h2{font-size:clamp(28px,4vw,44px);font-weight:800}
+.final p{margin:16px auto 0;max-width:58ch;color:#D6E6DD}
+.final .fone{margin-top:12px}
+.assin{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.18);display:grid;gap:2px}
+.assin b{font-family:var(--display);font-size:18px}
+.assin span{color:#BFD5C9;font-size:15px}
+
+.posic{background:var(--ink);color:var(--bg);text-align:center}
+.posic .nao{font-size:clamp(17px,2vw,20px);opacity:.75}
+.posic .sim{margin-top:10px;font-family:var(--display);font-weight:800;font-size:clamp(26px,3.8vw,42px);line-height:1.15;text-wrap:balance;max-width:24ch;margin-inline:auto}
+.posic em{font-style:normal;color:var(--coral)}
+.pacotes{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.pac{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px 24px}
+.pac.top{background:var(--green);color:var(--on);border-color:var(--green)}
+.pac h3{font-size:24px;font-weight:800}
+.pac dl{margin:18px 0 0;display:grid;gap:4px}
+.pac dt{font-size:13px;font-weight:700;color:var(--muted);margin-top:10px}
+.pac.top dt{color:#BFD5C9}
+.pac dd{margin:0;font-size:17px;font-weight:600}
+.bfnota{margin-top:20px;background:#0B0B0B;color:#fff;border-radius:12px;padding:14px 18px;font-size:16px}
+.bfnota b{color:var(--coral)}
+.final .tag{margin-bottom:14px}
+.perg{list-style:none;padding:0;margin:24px auto 0;max-width:560px;display:grid;gap:10px;text-align:left}
+.perg li{background:rgba(255,255,255,.08);border-radius:12px;padding:14px 18px;font-weight:600}
+.quem .in{display:grid;grid-template-columns:minmax(200px,320px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.foto{aspect-ratio:4/5;border-radius:24px;background:linear-gradient(160deg,var(--green),var(--green-2));display:grid;place-items:center;overflow:hidden;box-shadow:0 18px 40px -18px rgba(0,0,0,.45);position:relative}
+.foto::after{content:"";position:absolute;inset:auto -20% -30% auto;width:70%;aspect-ratio:1;border-radius:50%;background:var(--coral);opacity:.9;z-index:0}
+.foto span{position:relative;z-index:1;font-family:var(--display);font-weight:800;font-size:64px;color:var(--on)}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;z-index:2}
+.bio{display:grid;gap:14px}
+.eti{font-size:14px;font-weight:700;color:var(--coral)}
+.bio h2{font-size:clamp(30px,4vw,44px);font-weight:800}
+.esp{font-family:var(--display);font-weight:600;font-size:18px;color:var(--green);margin-top:-6px}
+:root[data-theme=dark] .esp{color:var(--t3)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .esp{color:var(--t3)}}
+.ident{font-weight:700}
+.bio p:not(.eti):not(.esp):not(.ident){color:var(--muted);max-width:64ch}
+.selos{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+.selos li{background:var(--soft);border-radius:99px;padding:8px 16px;font-size:15px}
+.selos b{font-family:var(--display)}
+@media(max-width:760px){.quem .in{grid-template-columns:1fr}.foto{max-width:300px}}
+.marca-top{margin-bottom:clamp(20px,3vw,36px)}
+.hero .logo{display:block;height:clamp(84px,10vw,120px);width:auto}
+.assin{justify-items:center}
+.assin .logo{height:100px;width:auto;margin-bottom:12px}
+@media(max-width:900px){.formatos{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.hero .in,.q{grid-template-columns:1fr}.fig{max-width:520px}}
+@media(max-width:760px){.pacotes{grid-template-columns:1fr}}
+@media(max-width:600px){.two,.formatos{grid-template-columns:1fr}.passos li{grid-template-columns:48px minmax(0,1fr);gap:14px}.passos li::before{width:42px;height:42px;font-size:17px}.aviso{grid-template-columns:1fr}.cta{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.cta{transition:none}.cta:hover{transform:none}#mapa .lk{animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bf"><b>BLACK FRIDAY</b> · Condição especial para projetos contratados durante a campanha</div>
+
+<header class="hero band">
+ <div class="in marca-top"><img class="logo" src="logo-gfp-claro.png" alt="Grow For People" width="429" height="247"></div>
+ <div class="in">
+  <div>
+   <span class="tag">Inteligência Comportamental</span>
+   <h1>Sua equipe tem mais potencial do que você imagina</h1>
+   <p class="lead">Mapeamento comportamental dos profissionais da sua empresa, relacionando cada perfil à função que a pessoa exerce, para você conduzir o time com mais clareza e tomar decisões mais assertivas.</p>
+   <a class="cta wa" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg>
+    Quero um orçamento personalizado
+   </a>
+   <p class="fone">Orçamento sem compromisso · WhatsApp: <span class="num"></span></p>
+  </div>
+  <div class="fig" role="img" aria-label="Ilustração: pessoas com perfis diferentes ligadas às funções da empresa">
+   <svg id="mapa" viewBox="0 0 520 440"></svg>
+  </div>
+ </div>
+</header>
+
+<section class="band">
+ <div class="in q">
+  <h2>Você conhece de verdade o perfil das pessoas que trabalham na sua empresa?</h2>
+  <div class="txt">
+   <p>Muitas vezes cobramos resultados sem considerar as características comportamentais de cada profissional, suas habilidades naturais e a compatibilidade entre o perfil e a função que ele exerce.</p>
+   <div class="two">
+    <div><h3>Talentos subutilizados</h3><p>Potenciais que ainda não foram identificados e pessoas que poderiam render mais em outro contexto.</p></div>
+    <div><h3>Gestores sem ferramentas</h3><p>Líderes que precisam de recursos mais assertivos para conduzir suas equipes.</p></div>
+   </div>
+   <p class="destaque">Não se trata apenas de conhecer o perfil de cada colaborador, mas de usar essas informações de forma estratégica para melhorar a condução das equipes e os resultados do negócio.</p>
+  </div>
+ </div>
+</section>
+
+<section class="posic band">
+ <div class="in">
+  <p class="nao">A Grow For People não vende testes comportamentais.</p>
+  <p class="sim">Entrega <em>inteligência</em> para decisões mais assertivas sobre pessoas.</p>
+ </div>
+</section>
+
+<section class="band sec">
+ <div class="in">
+  <h2>Onde o mapeamento pode ser aplicado</h2>
+  <p class="sub">Você escolhe o recorte que faz mais sentido para o momento da sua empresa.</p>
+  <ul class="formatos" id="formatos"></ul>
+ </div>
+</section>
+
+<section class="band alt sec">
+ <div class="in">
+  <h2>O que a entrega inclui</h2>
+  <p class="sub">Um processo completo, da aplicação das avaliações até as recomendações práticas para a gestão.</p>
+  <ol class="passos" id="passos"></ol>
+ </div>
+</section>
+
+<section class="band sec">
+ <div class="in">
+  <h2>Três formatos de projeto</h2>
+  <p class="sub">Cada empresa tem um tamanho de equipe e um objetivo diferente, por isso não existe um preço único. A proposta é montada depois de uma conversa breve para entender quantas pessoas serão avaliadas, quais áreas e o que a empresa quer alcançar.</p>
+  <div class="pacotes" id="pacotes"></div>
+  <p class="bfnota"><b>Black Friday:</b> projetos contratados durante a campanha têm uma condição especial.</p>
+ </div>
+</section>
+
+<section class="band" style="padding-top:0">
+ <div class="in aviso">
+  <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="27" fill="var(--soft)"/><path d="M16 30l8 8 16-18" fill="none" stroke="var(--green)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div>
+   <h2>Um apoio à decisão, não uma sentença</h2>
+   <p>Os resultados são apresentados como <strong>apoio à tomada de decisão</strong>, nunca como um julgamento sobre a capacidade de alguém. O perfil comportamental, sozinho, não determina se uma pessoa está ou não apta a exercer uma função.</p>
+   <p>Ele amplia o olhar do gestor: ajuda a entender como cada pessoa age, o que a motiva e como ela pode se desenvolver.</p>
+  </div>
+ </div>
+</section>
+
+<section class="band quem">
+ <div class="in">
+  <div class="foto" id="foto"><span>PA</span><img src="foto-pati.jpg" alt="Patrícia Abrão sorrindo, de blazer claro"></div>
+  <div class="bio">
+   <p class="eti">Quem conduz o trabalho</p>
+   <h2>Patrícia Abrão</h2>
+   <p class="esp">Especialista em Gestão e Desenvolvimento de Pessoas</p>
+   <p class="ident">Cristã, mãe, empresária, mentora, escritora e apaixonada por pessoas.</p>
+   <p>Há mais de 20 anos atuo com gestão e desenvolvimento de pessoas, acompanhando líderes, equipes e profissionais. Nessa caminhada aprendi que o crescimento de uma pessoa, de uma carreira ou de um negócio começa sempre no mesmo lugar: em quem ela é.</p>
+   <p>No mundo corporativo, trabalho com RH estratégico: capacitação de lideranças, cultura e clima organizacional, modelos de feedback e recrutamento e seleção estratégica. Sou especialista em temperamentos e perfil comportamental.</p>
+   <ul class="selos"><li><b>+20 anos</b> em gestão de pessoas</li><li><b>Especialista</b> em temperamentos e perfil comportamental</li><li><b>RH estratégico</b> para empresas</li></ul>
+  </div>
+ </div>
+</section>
+
+<section class="final band">
+ <div class="in">
+  <span class="tag">Sob medida para a sua empresa</span>
+  <h2>Peça seu orçamento personalizado</h2>
+  <p>Me chame no WhatsApp e eu monto uma proposta sob medida. Para isso, vou precisar entender:</p>
+  <ul class="perg">
+   <li>Quantas pessoas serão avaliadas</li>
+   <li>Quais áreas ou cargos entram no mapeamento</li>
+   <li>Qual é o principal objetivo da empresa com o projeto</li>
+  </ul>
+  <a class="cta wa" href="#" target="_blank" rel="noopener">Pedir meu orçamento no WhatsApp</a>
+  <p class="fone">WhatsApp: <span class="num"></span></p>
+  <div class="assin"><img class="logo" src="logo-gfp-claro.png" alt="Grow For People" width="429" height="247"><b>Patrícia Abrão</b><span>Grow For People · Gestão Estratégica de Pessoas</span></div>
+ </div>
+</section>
+
+<script>
+{
+const WA='5541999349828';
+const MSG='Olá, Patrícia! Vi a página da Black Friday e gostaria de um orçamento personalizado do mapeamento comportamental para a equipe da minha empresa.';
+const url='https://wa.me/'+WA+'?text='+encodeURIComponent(MSG);
+document.querySelectorAll('.wa').forEach(a=>a.href=url);
+const fmt='('+WA.slice(2,4)+') '+WA.slice(4,9)+'-'+WA.slice(9);
+document.querySelectorAll('.num').forEach(s=>s.textContent=fmt);
+
+const ic={
+ com:'<path d="M8 32l9-9 6 6 13-13" fill="none" stroke="var(--green)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 16h8v8" fill="none" stroke="var(--coral)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>',
+ ges:'<circle cx="22" cy="13" r="6" fill="var(--green)"/><circle cx="10" cy="26" r="4.5" fill="var(--coral)"/><circle cx="34" cy="26" r="4.5" fill="var(--coral)"/><path d="M22 19v5M14 26h16" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/><path d="M4 40c1-5 4-8 6-8s5 3 6 8M28 40c1-5 4-8 6-8s5 3 6 8" fill="none" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>',
+ dep:'<rect x="5" y="8" width="34" height="28" rx="5" fill="none" stroke="var(--green)" stroke-width="3.5"/><circle cx="15" cy="20" r="3.5" fill="var(--coral)"/><circle cx="29" cy="20" r="3.5" fill="var(--coral)"/><circle cx="22" cy="28" r="3.5" fill="var(--coral)"/>',
+ lid:'<path d="M22 6l4.5 9 10 1.5-7.2 7 1.7 10L22 29l-9 4.5 1.7-10-7.2-7 10-1.5Z" fill="none" stroke="var(--green)" stroke-width="3.2" stroke-linejoin="round"/><circle cx="22" cy="20" r="4" fill="var(--coral)"/>'
+};
+const formatos=[
+ ['com','Equipe comercial','Avaliação comportamental de quem vende e atende, para alinhar perfil, abordagem e metas.'],
+ ['ges','Gestores','Mapeamento comportamental de quem conduz pessoas, para fortalecer a forma de gerir.'],
+ ['dep','Uma equipe ou departamento','Avaliação de um time específico, entendendo a dinâmica entre as pessoas e as funções.'],
+ ['lid','Liderança','Diagnóstico comportamental da liderança, com um olhar para o desenvolvimento dos líderes.']
+];
+document.getElementById('formatos').innerHTML=formatos.map(([k,t,d])=>`<li><svg viewBox="0 0 44 44" aria-hidden="true">${ic[k]}</svg><h3>${t}</h3><p>${d}</p></li>`).join('');
+
+const passos=[
+ ['Aplicação das avaliações','Ferramentas de avaliação comportamental, incluindo DISC e instrumentos complementares.'],
+ ['Análise individual dos perfis','Leitura cuidadosa do perfil de cada profissional avaliado.'],
+ ['Cruzamento perfil × função','Relação entre o perfil de cada pessoa e a função que ela exerce hoje.'],
+ ['Potencialidades e oportunidades','Identificação de potencialidades, pontos de atenção e oportunidades de desenvolvimento.'],
+ ['Devolutiva estratégica','Apresentação dos resultados para a empresa, com recomendações práticas para a gestão.']
+];
+document.getElementById('passos').innerHTML=passos.map(([t,d])=>`<li><div><h3>${t}</h3><p>${d}</p></div></li>`).join('');
+
+const pacotes=[
+ ['Essencial','Gestores','Conhecer e desenvolver a liderança.'],
+ ['Equipe','Um departamento','Mapear perfis e potencialidades.'],
+ ['Estratégico','Gestores + equipes','Cruzar perfis, funções e necessidades da operação.']
+];
+document.getElementById('pacotes').innerHTML=pacotes.map(([n,p,o],i)=>`<article class="pac${i==2?' top':''}"><h3>${n}</h3><dl><dt>Para</dt><dd>${p}</dd><dt>Objetivo</dt><dd>${o}</dd></dl></article>`).join('');
+
+/* Ilustração do mapa: pessoas (esquerda) ligadas a funções (direita) */
+const tons=['var(--t1)','var(--t2)','var(--t3)','var(--t4)'];
+const pessoas=[[70,70,0],[150,118,2],[62,178,1],[148,226,3],[70,290,2],[150,342,0],[66,396,3]];
+const funcoes=[['Comercial',70],['Gestão',170],['Operação',270],['Liderança',370]];
+const liga=[[0,0],[1,2],[2,0],[3,1],[4,2],[5,3],[6,1],[1,1],[3,3]];
+let s='<defs><filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity=".25"/></filter></defs>';
+s+=liga.map(([p,f],i)=>{const [x,y]=pessoas[p];const fy=funcoes[f][1];return `<path class="lk" d="M${x+26} ${y} C ${x+130} ${y}, 250 ${fy}, 330 ${fy}" fill="none" stroke="${tons[pessoas[p][2]]}" stroke-width="2.5" stroke-opacity=".7" stroke-dasharray="6 6" style="animation:flow 2.4s linear ${i*.2}s infinite"/>`}).join('');
+s+=pessoas.map(([x,y,t])=>`<g filter="url(#sh)"><circle cx="${x}" cy="${y}" r="26" fill="${tons[t]}"/><circle cx="${x}" cy="${y-7}" r="8" fill="#0E4A36"/><path d="M${x-14} ${y+17} a14 12 0 0 1 28 0" fill="#0E4A36"/></g>`).join('');
+s+=funcoes.map(([n,y])=>`<g filter="url(#sh)"><rect x="330" y="${y-28}" width="170" height="56" rx="14" fill="#F4F8F5"/><rect x="330" y="${y-28}" width="8" height="56" rx="4" fill="#F06C1C"/></g><text x="352" y="${y+6}" font-family="Sora,sans-serif" font-weight="700" font-size="19" fill="#0E4A36">${n}</text>`).join('');
+s+='<style>@keyframes flow{to{stroke-dashoffset:-24}}</style>';
+document.getElementById('mapa').innerHTML=s;
+}
+</script>
+</body>
+</html>
